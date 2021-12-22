@@ -125,7 +125,7 @@ class HBNBCommand(cmd.Cmd):
         new_instance = HBNBCommand.classes[arguments[0]]()
         for i in range(1, len(arguments)):
             argument = arguments[i].split("=")
-            argument[1].replace('-', ' ')
+            argument[1] = argument[1].replace('_', ' ')
             if '"' in argument[1]:
                 argument[1] = argument[1].strip('"')
             else:
