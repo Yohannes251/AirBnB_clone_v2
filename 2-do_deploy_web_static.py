@@ -1,11 +1,14 @@
 #!/usr/bin/python3
+"""
+    This module deploys our web_static from the archived files
+"""
 from fabric.api import *
 import datetime
 import os
 
 
 def do_pack():
-    """do pack"""
+    """Archives our files"""
     time = datetime.datetime.now()
     date = (str(time.year) + str(time.month) + str(time.day) + str(time.hour) +
             str(time.minute) + str(time.second))
@@ -21,6 +24,7 @@ env.hosts = ['35.196.247.36', '35.170.81.242']
 
 
 def do_deploy(archive_path):
+    """Deploys out archived files to remote server and unpacks them"""
     if os.path.exists(archive_path) is False:
         return False
     try:
