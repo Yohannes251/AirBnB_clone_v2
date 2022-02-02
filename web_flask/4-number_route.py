@@ -34,7 +34,7 @@ def python_is_cool(text="is cool"):
     return "Python {}".format(text.replace('_', ' '))
 
 
-@app.route('/number/', strict_slashes=False)
+# @app.route('/number/', strict_slashes=False)
 @app.route('/number/<int:n>', strict_slashes=False)
 def number_n(n):
     """Returns page for /number/<n> when n is an integer"""
